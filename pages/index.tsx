@@ -1,5 +1,5 @@
+import { Provider } from 'jotai';
 import type { NextPage } from 'next';
-import { RecoilRoot } from 'recoil';
 import Counter from '../Components/Counter';
 
 interface HomeProps {
@@ -13,12 +13,12 @@ const Home: NextPage<HomeProps> = ({ database }) => {
 				ToDo App
 			</div>
 			<div className="pt-16 px-3 flex flex-col gap-3">
-				<RecoilRoot>
+				<Provider>
 					<Counter label="A" />
-				</RecoilRoot>
-				<RecoilRoot>
+				</Provider>
+				<Provider>
 					<Counter label="B" />
-				</RecoilRoot>
+				</Provider>
 			</div>
 		</div>
 	);
