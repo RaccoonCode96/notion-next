@@ -1,0 +1,84 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import Counter from './Counter';
+import PlantUml from '../plant';
+import dedent from 'ts-dedent';
+
+<Meta title="MDX/Counter" component={Counter} />
+
+# Components
+
+## hi
+
+- [x] : hi
+
+| x   | 1   |
+| --- | --- |
+| 1   | 2   |
+
+<PlantUml>
+	{dedent`
+@startuml
+abstract        abstract
+abstract class  "abstract class"
+annotation      annotation
+circle          circle
+()              circle_short_form
+class           class
+diamond         diamond
+<>              diamond_short_form
+entity          entity
+enum            enum
+interface       interface
+protocol        protocol
+struct          struct
+@enduml
+`}
+</PlantUml>
+
+## 1.안녕
+
+<PlantUml>
+	{dedent`
+@startuml
+abstract        abstract
+abstract class  "abstract class"
+annotation      annotation
+circle          circle
+()              circle_short_form
+class           class
+diamond         diamond
+<>              diamond_short_form
+entity          entity
+enum            enum
+interface       interface
+protocol        protocol
+struct          struct
+@enduml
+`}
+</PlantUml>
+
+## Ki
+
+<PlantUml>
+	{dedent`
+@startuml
+abstract        abstract
+abstract class  "abstract class"
+annotation      annotation
+circle          circle
+()              circle_short_form
+class           class
+diamond         diamond
+<>              diamond_short_form
+entity          entity
+enum            enum
+interface       interface
+protocol        protocol
+struct          struct
+@enduml
+`}
+</PlantUml>
+
+<Story name="hWWW">
+	<Counter label={'HHH'} />
+</Story>

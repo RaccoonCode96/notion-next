@@ -1,7 +1,7 @@
 import { countAction } from './Counter.atom';
 import Center from './Center';
 import SetNumber from './SetNumber';
-import { useSetAtom } from 'jotai';
+import { PrimitiveAtom, useSetAtom } from 'jotai';
 
 interface Props {
 	label: string;

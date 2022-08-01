@@ -1,19 +1,36 @@
 import { atom } from 'jotai';
+import { focusAtom } from 'jotai/optics';
 
-export const countState = atom(0);
-export const stepState = atom(1);
+export interface Counter {
+	id: number;
+	label: string;
+	count: number;
+	step: number;
+}
+
+export const counterState = atom({
+	count: 0,
+	step: 1,
+});
+export const countState = focusAtom(counterState, (optic) =>
+	optic.prop('count')
+);
+export const stepState = focusAtom(counterState, (optic) => optic.prop('step'));
+
 export const countAction = atom(
 	null,
 	(get, set, update: 'increase' | 'decrease') => {
 		switch (update) {
 			case 'increase': {
-				set(countState, get(countState) + get(stepState));
+				set(countState, get(counterState).count + get(counterState).step);
 				break;
 			}
 			case 'decrease': {
-				set(countState, get(countState) - get(stepState));
+				set(countState, get(counterState).count - get(counterState).step);
 				break;
 			}
 		}
 	}
 );
+
+const useCounter = () => {};
